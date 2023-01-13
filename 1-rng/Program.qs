@@ -9,21 +9,14 @@
     open Microsoft.Quantum.Preparation;
 
     @EntryPoint()
-    operation Start() : Unit {
-        let random = RandomNumberGenerator();
-        Message($"Random uint16: {random}");
-    }
-
-    operation RandomNumberGenerator() : Int {
-        use qubits = Qubit[16];
+    operation Run() : Int {
+        use qubits = Qubit[3];
         ApplyToEach(H, qubits);
 
-        // create a QPU register
-        let register = LittleEndian(qubits);
+        // measure qubits into a bit array
+        let results = MultiM(qubits);
 
-        // measure the entire register to retrieve the integer
-        let randomNumber = MeasureInteger(register);
-        
-        return randomNumber;
-    }  
+        // convert into an integer
+        return ResultArrayAsInt(results);
+    }
 }
