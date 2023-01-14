@@ -1,1 +1,1 @@
-dotnet run --project ../collapse/src/Collapse sim ./1-rng/ --shots 500 --qir --skip-build
+../collapse/src/Collapse/bin/Release/net6.0/osx-arm64/publish/Collapse sim ./1-hadamard/ --shots 250 --qir

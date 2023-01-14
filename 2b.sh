@@ -1,0 +1,1 @@
+../collapse/src/Collapse/bin/Release/net6.0/osx-arm64/publish/Collapse sim ./2-rng/ --shots 250 --qir

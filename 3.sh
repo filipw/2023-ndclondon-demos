@@ -1,1 +1,1 @@
-dotnet run --project ../collapse/src/Collapse sim ./3-entanglement/ --shots 500 --qir --skip-build
+dotnet run --project ../collapse/src/Collapse sim ./3-entanglement/ --shots 250 --qir

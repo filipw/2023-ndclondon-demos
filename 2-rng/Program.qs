@@ -10,7 +10,7 @@
 
     @EntryPoint()
     operation Run() : Int {
-        use qubits = Qubit[3];
+        use qubits = Qubit[16];
         ApplyToEach(H, qubits);
 
         // measure qubits into a bit array

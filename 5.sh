@@ -1,0 +1,1 @@
+dotnet run --project ./5-bb84/
