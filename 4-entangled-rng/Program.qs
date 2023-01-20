@@ -21,18 +21,20 @@
 
             PrepareEntangledState(bob, alice);
 
-            let aliceRegister = LittleEndian(alice);
-            let bobRegister = LittleEndian(bob);
+            let numberAlice = MeasureInteger(alice);
+            let numberBob = MeasureInteger(bob);
 
-            let resultAlice = MeasureInteger(aliceRegister);
-            let resultBob = MeasureInteger(bobRegister);
-
-            Message($"Alice result: {resultAlice}, Bob result: {resultBob}");
-            if (resultAlice == resultBob) {
+            Message($"Alice result: {numberAlice}, Bob result: {numberBob}");
+            if (numberAlice == numberBob) {
                 set agreedTotal += 1;
             }
         }
 
         Message($"Measurements agreed: {agreedTotal}");
+    }
+
+    operation MeasureInteger(qubits : Qubit[]) : Int {
+        let result = MultiM(qubits);
+        return ResultArrayAsInt(result);
     }
 }
